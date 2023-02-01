@@ -19,7 +19,7 @@ class AccountRepositoryTest {
     }
 
     public void verifyIfAccountExists(Long id) {
-        Account account = accountRepository.getById(id);
+        Account account = accountRepository.getOne(id);
         Assertions.assertThat(account.getType()).isNotNull();
     }
 }

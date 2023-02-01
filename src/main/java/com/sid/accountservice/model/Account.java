@@ -1,5 +1,6 @@
 package com.sid.accountservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -15,12 +16,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
 
-@XmlRootElement
+//@XmlRootElement
 @Entity
 @Data
 @AllArgsConstructor
@@ -28,10 +27,11 @@ import java.util.Date;
 @Setter
 @Getter
 @ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @XmlElement(name = "Message ID")
+    //@XmlElement(name = "Message ID")
     private Long id;
     private double balance;
     @Temporal(TemporalType.DATE)
