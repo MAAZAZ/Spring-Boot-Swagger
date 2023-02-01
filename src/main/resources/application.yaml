@@ -1,0 +1,9 @@
+server:
+  port: 8080
+  servlet:
+    path: /bank
+spring:
+  datasource:
+    url=jdbc:h2:mem:bank
+  jpa:
+    open-in-view=true
