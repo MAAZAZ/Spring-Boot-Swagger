@@ -15,6 +15,7 @@
     <description>Project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
+        <lombok-version>1.18.12</lombok-version>
     </properties>
     <dependencies>
         <dependency>
@@ -47,6 +48,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -96,15 +98,20 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+            </plugin>
         </plugins>
     </build>
 
     <profiles>
         <profile>
             <id>dev</id>
-            <activation>
+            <!--<activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>
+            </activation>-->
             <properties>
                 <spring.profiles.active>dev</spring.profiles.active>
             </properties>
